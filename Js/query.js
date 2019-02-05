@@ -5,7 +5,8 @@ $("#plus").on("click",function() {
 $("#newTodo").keypress(function(key){
 	if(key.which===13 && $(this).val()!="")
 	{
-		 $('table').append("<tr class=\"entry\"> <td class=\"trash\"> <i class=\"far fa-trash-alt\" ></i> </td> <td class=\"todo\">"+this.value+"</td> </tr>");
+
+		$('table').append("<tr class=\"entry\"> <td class=\"trash\"> <i class=\"far fa-trash-alt\" ></i> </td> <td class=\"todo\">"+this.value+"</td> </tr>");
 		$(this).val("");
 	}
 });
@@ -17,4 +18,8 @@ $("table").on("click",".trash",function(){
 $("table").on("click",".todo",function(){
 	$(this).toggleClass("done");
 
+});
+
+$('p').on("mouseenter",function(){
+	$(this).parent().find('i').css("display","inline-block");
 });
