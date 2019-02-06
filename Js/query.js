@@ -9,8 +9,6 @@ $("#newTodo").keypress(function(key){
 		$('ul').append("<li><span class=\"trash\" ><i class=\"far fa-trash-alt\"></i></span>"+$(this).val()+"</li>")
 		$(this).val("");
 	}
-	alert(key.which);
-
 });
 
 $(".listContainer").on("click","span",function(event){
