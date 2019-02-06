@@ -1,5 +1,5 @@
-$("#plus").on("click",function() {
-	$("#newTodo").slideToggle(500);
+$("#plus").click(function() {
+	$("input").fadeToggle();
 });
 
 $("#newTodo").keypress(function(key){
