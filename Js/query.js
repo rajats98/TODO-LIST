@@ -3,6 +3,7 @@ $("#plus").click(function() {
 });
 
 $("#newTodo").keypress(function(key){
+	alert(key.which);
 	if(key.which===13 && $(this).val()!="")
 	{
 
