@@ -1,21 +1,26 @@
-$("#plus").on("click",function() {
-	$("#newTodo").slideToggle(300);
+$("#plus").click(function() {
+	$("input").fadeToggle();
 });
 
 $("#newTodo").keypress(function(key){
 	if(key.which===13 && $(this).val()!="")
 	{
 
-		$('table').append("<tr class=\"entry\"> <td class=\"trash\"> <i class=\"far fa-trash-alt\" ></i> </td> <td class=\"todo\">"+this.value+"</td> </tr>");
+		$('ul').append("<li><span class=\"trash\" ><i class=\"far fa-trash-alt\"></i></span>"+$(this).val()+"</li>")
 		$(this).val("");
 	}
 });
 
-$("table").on("click",".trash",function(){
-	$(this).parent().remove();
+$(".listContainer").on("click","span",function(event){
+	$(this).parent().fadeOut(500,function(){
+		$(this).remove();
+	});
+
+	event.stopPropagation();
+
 });
 
-$("table").on("click",".todo",function(){
+$("div").on("click","li",function(){
 	$(this).toggleClass("done");
 
 });
